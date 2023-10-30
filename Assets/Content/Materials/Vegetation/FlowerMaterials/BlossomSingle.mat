@@ -138,7 +138,7 @@ Material:
     - _ColorMapHeight: 1
     - _ColorMapStrength: 0
     - _ColorMask: 15
-    - _Cull: 0
+    - _Cull: 1
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
