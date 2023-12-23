@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Playables;
 
 namespace DesirePaths.Landmarks
 {
     [RequireComponent(typeof(BoxCollider))]
     public class Landmark : MonoBehaviour
-    {
+    {        
+        [HideInInspector] public UnityEvent OnLandmarkTriggered;
+        [HideInInspector] public UnityEvent OnLandmarkActivationStart;
+
         private BoxCollider _collider => GetComponent<BoxCollider>();
-        public UnityEvent OnLandmarkTriggered;
         private string _playerTag = "Player_Collider";
         private bool _triggered = false;
         public void SetPlayerTag(string tag)

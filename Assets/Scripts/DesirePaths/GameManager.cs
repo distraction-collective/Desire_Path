@@ -148,8 +148,17 @@ namespace DesirePaths
             UpdateNarration();
             switch(e)
             {
+                case Landmarks.LandmarkManager.LandmarkEvents.PILLAR_ACTIVATION_START:
+                    // suspend player controls 
+                    Debug.Log("[Game manager / pillar] pillar activation started");
+                    _playerHealth.EnableControls(false);
+                    break;
                 case Landmarks.LandmarkManager.LandmarkEvents.PILLAR_ACTIVATED:
-                    Debug.Log("[Game manager / landmarks] pillar activated");
+                    // update respawn point
+                    _playerSpawner.UpdateSpawnPoint(_landmarkManager.GetLastLandmark.gameObject.transform);
+                    // kill player
+                    _playerHealth.KillPlayer();
+                    Debug.Log("[Game manager / pillar] pillar activated");
                     break;
                 case Landmarks.LandmarkManager.LandmarkEvents.LANDMARK_ENTERED:
                     Debug.Log("[Game manager / landmarks] generic landmark entered");
@@ -185,18 +194,6 @@ namespace DesirePaths
         /// <param name="position"></param>
         void RespawnPlayer(bool safe, Vector3 position)
         {
-            //du coup dans ta note rajoute le fait que je dois deposer les viscères avant de faire le respawn, et le deposite cadaver - si on veut faire une animation qui backtrack tout notre chemin
-            /*_playerSpawner.OnPlayerRespawnComplete.AddListener(delegate
-            {
-                _playerSpawner.OnPlayerRespawnComplete.RemoveAllListeners();
-                if (!safe)
-                {
-                    //Deposite cadaver if not on safe space
-                    _cadaverManager.DepositCadaverOnPosition(position);
-                } //We place only when we're sure camera is not looking, so when resuscitate is call                
-                _playerHealth.Resuscitate();
-            });*/
-
             _uiManager.HideNShow(); //Fade
             if (!safe)
             {

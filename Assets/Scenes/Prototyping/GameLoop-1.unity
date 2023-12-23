@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 64062265}
   - component: {fileID: 64062266}
   - component: {fileID: 64062267}
+  - component: {fileID: 64062268}
   m_Layer: 18
   m_Name: Pillar (2)
   m_TagString: Untagged
@@ -323,6 +324,27 @@ MonoBehaviour:
   OnLandmarkTriggered:
     m_PersistentCalls:
       m_Calls: []
+  OnLandmarkActivationStart:
+    m_PersistentCalls:
+      m_Calls: []
+  strandAnchor: {fileID: 0}
+--- !u!320 &64062268
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64062264}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 0}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &115077717
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,6 +1073,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1732396810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!28 &226138261
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 2
+  m_Width: 32
+  m_Height: 1
+  m_CompleteImageSize: 128
+  m_MipsStripped: 0
+  m_TextureFormat: 4
+  m_MipCount: 1
+  m_IsReadable: 1
+  m_IsPreProcessed: 0
+  m_IgnoreMipmapLimit: 0
+  m_MipmapLimitGroupName: 
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
+  m_VTOnly: 0
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_LightmapFormat: 0
+  m_ColorSpace: 0
+  m_PlatformBlob: 
+  image data: 128
+  _typelessdata: b1d4cfffb3d5d0f7b6d6d2efb8d8d3e7bbd9d5dfbddad6d7bfdcd8cfc2ddd9c7c4dfdbbfc7e0dcb7c9e1deafcce3dfa7cee4e19fd1e5e297d3e7e48fd5e8e587d8e9e780daebe878ddecea70dfedeb68e2efed60e4f0ee58e7f1f050e9f3f148ebf4f340eef6f438f0f7f630f3f8f728f5faf920f8fbfa18fafcfc10fdfefd08
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &226491831
 GameObject:
   m_ObjectHideFlags: 0
@@ -2783,44 +2853,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1431794906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &802875473
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 256
-  m_Height: 256
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 0
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &825449086
 GameObject:
   m_ObjectHideFlags: 0
@@ -3026,6 +3058,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!84 &843544998
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 256
+  m_Height: 256
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 0
+  m_ColorFormat: 8
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 0
+    m_WrapV: 0
+    m_WrapW: 0
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &848596891
 GameObject:
   m_ObjectHideFlags: 0
@@ -4994,6 +5064,7 @@ GameObject:
   - component: {fileID: 1137061838}
   - component: {fileID: 1137061840}
   - component: {fileID: 1137061839}
+  - component: {fileID: 1137061841}
   m_Layer: 18
   m_Name: Landmark1 (1)
   m_TagString: Untagged
@@ -5052,6 +5123,26 @@ MonoBehaviour:
   OnLandmarkTriggered:
     m_PersistentCalls:
       m_Calls: []
+  OnLandmarkActivationStart:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!320 &1137061841
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137061837}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 0}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1148841692
 GameObject:
   m_ObjectHideFlags: 0
@@ -5063,6 +5154,7 @@ GameObject:
   - component: {fileID: 1148841695}
   - component: {fileID: 1148841694}
   - component: {fileID: 1148841693}
+  - component: {fileID: 1148841696}
   m_Layer: 18
   m_Name: Pillar (3)
   m_TagString: Untagged
@@ -5085,6 +5177,10 @@ MonoBehaviour:
   OnLandmarkTriggered:
     m_PersistentCalls:
       m_Calls: []
+  OnLandmarkActivationStart:
+    m_PersistentCalls:
+      m_Calls: []
+  strandAnchor: {fileID: 0}
 --- !u!65 &1148841694
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5121,6 +5217,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1975274387}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &1148841696
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148841692}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 0}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1164904843
 GameObject:
   m_ObjectHideFlags: 0
@@ -5273,6 +5386,7 @@ GameObject:
   - component: {fileID: 1199940613}
   - component: {fileID: 1199940614}
   - component: {fileID: 1199940615}
+  - component: {fileID: 1199940616}
   m_Layer: 18
   m_Name: Pillar
   m_TagString: Untagged
@@ -5331,6 +5445,27 @@ MonoBehaviour:
   OnLandmarkTriggered:
     m_PersistentCalls:
       m_Calls: []
+  OnLandmarkActivationStart:
+    m_PersistentCalls:
+      m_Calls: []
+  strandAnchor: {fileID: 0}
+--- !u!320 &1199940616
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199940612}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 0}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1219667931
 GameObject:
   m_ObjectHideFlags: 0
@@ -10348,6 +10483,7 @@ GameObject:
   - component: {fileID: 1283566887}
   - component: {fileID: 1283566889}
   - component: {fileID: 1283566888}
+  - component: {fileID: 1283566890}
   m_Layer: 18
   m_Name: Landmark1 (2)
   m_TagString: Untagged
@@ -10406,6 +10542,26 @@ MonoBehaviour:
   OnLandmarkTriggered:
     m_PersistentCalls:
       m_Calls: []
+  OnLandmarkActivationStart:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!320 &1283566890
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283566886}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 0}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1287800049
 GameObject:
   m_ObjectHideFlags: 0
@@ -10743,6 +10899,7 @@ GameObject:
   - component: {fileID: 1357245276}
   - component: {fileID: 1357245277}
   - component: {fileID: 1357245278}
+  - component: {fileID: 1357245279}
   m_Layer: 18
   m_Name: Pillar (1)
   m_TagString: Untagged
@@ -10801,6 +10958,27 @@ MonoBehaviour:
   OnLandmarkTriggered:
     m_PersistentCalls:
       m_Calls: []
+  OnLandmarkActivationStart:
+    m_PersistentCalls:
+      m_Calls: []
+  strandAnchor: {fileID: 0}
+--- !u!320 &1357245279
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357245275}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 0}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1361567266
 GameObject:
   m_ObjectHideFlags: 0
@@ -12115,11 +12293,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HeightGradientTex:
-        m_Texture: {fileID: 1809733713}
+        m_Texture: {fileID: 226138261}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 802875473}
+        m_Texture: {fileID: 843544998}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -12142,7 +12320,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DetailColor: {r: 0.51186275, g: 0.51186275, b: 0.51186275, a: 0}
     - _DetailData: {r: 0.5, g: 4, b: -0.5, a: 0}
-    - _DetailWindDirection: {r: 0.15340784, g: 0, b: 0, a: 0}
+    - _DetailWindDirection: {r: 0.0630749, g: 0, b: 0, a: 0}
     - _DistanceData: {r: 0, g: 5, b: 1, a: 1}
     - _FogOfWarCenter: {r: 0, g: 0, b: 0, a: 1}
     - _FogOfWarCenterAdjusted: {r: 0, g: 0, b: 0, a: 1}
@@ -12153,7 +12331,7 @@ Material:
     - _ShadowData: {r: 0.502, g: 0, b: 62500, a: 0}
     - _SpecularColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _SunDir: {r: 0.3213938, g: 0.76604444, b: -0.5566705, a: 0}
-    - _WindDirection: {r: 0.15340784, g: 0, b: 0, a: 0}
+    - _WindDirection: {r: 0.0630749, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!1 &1703759169
 GameObject:
@@ -12754,54 +12932,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1274909848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!28 &1809733713
-Texture2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 2
-  m_Width: 32
-  m_Height: 1
-  m_CompleteImageSize: 128
-  m_MipsStripped: 0
-  m_TextureFormat: 4
-  m_MipCount: 1
-  m_IsReadable: 1
-  m_IsPreProcessed: 0
-  m_IgnoreMipmapLimit: 0
-  m_MipmapLimitGroupName: 
-  m_StreamingMipmaps: 0
-  m_StreamingMipmapsPriority: 0
-  m_VTOnly: 0
-  m_AlphaIsTransparency: 0
-  m_ImageCount: 1
-  m_TextureDimension: 2
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_LightmapFormat: 0
-  m_ColorSpace: 0
-  m_PlatformBlob: 
-  image data: 128
-  _typelessdata: b1d4cfffb3d5d0f7b6d6d2efb8d8d3e7bbd9d5dfbddad6d7bfdcd8cfc2ddd9c7c4dfdbbfc7e0dcb7c9e1deafcce3dfa7cee4e19fd1e5e297d3e7e48fd5e8e587d8e9e780daebe878ddecea70dfedeb68e2efed60e4f0ee58e7f1f050e9f3f148ebf4f340eef6f438f0f7f630f3f8f728f5faf920f8fbfa18fafcfc10fdfefd08
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &1836590374
 GameObject:
   m_ObjectHideFlags: 0
@@ -13034,6 +13164,7 @@ GameObject:
   - component: {fileID: 1895997984}
   - component: {fileID: 1895997983}
   - component: {fileID: 1895997982}
+  - component: {fileID: 1895997985}
   m_Layer: 0
   m_Name: GAME_MANAGER
   m_TagString: Untagged
@@ -13106,6 +13237,29 @@ Transform:
   - {fileID: 116423678}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1895997985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895997981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b973e85a2515f94c976b1dd20f2bad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _backTrackDuration: 10
+  _backTrackElement: {fileID: 956045531}
+  _vcam: {fileID: 1663702162}
+  _spline: {fileID: 1311094393}
+  _camera: {fileID: 1061397534}
+  _mainPPVolume: {fileID: 340852109}
+  _backtrackPPProfile: {fileID: 11400000, guid: 0360d6b0c75831b41ad984ebeff91ad7, type: 2}
+  _defaultPPProfile: {fileID: 11400000, guid: eb5a221325168fc4ca29ccc83e2cbc76, type: 2}
+  OnBacktrackComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1971341446
 GameObject:
   m_ObjectHideFlags: 0
@@ -13623,6 +13777,7 @@ GameObject:
   - component: {fileID: 2101082221}
   - component: {fileID: 2101082222}
   - component: {fileID: 2101082223}
+  - component: {fileID: 2101082224}
   m_Layer: 18
   m_Name: Landmark1
   m_TagString: Untagged
@@ -13660,6 +13815,9 @@ MonoBehaviour:
   OnLandmarkTriggered:
     m_PersistentCalls:
       m_Calls: []
+  OnLandmarkActivationStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &2101082223
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13681,6 +13839,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 5, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!320 &2101082224
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101082220}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 0}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &230273217068640440
 GameObject:
   m_ObjectHideFlags: 0

@@ -141,13 +141,11 @@ namespace DesirePaths
         public void KillPlayer()
         {
             dead = true;
-            _dangerVolume.weight = 0f;
-            _playerInputs.DeactivateInput();
-            _playerInputs.enabled = false;
+            _dangerVolume.weight = 0f;            
             _characterController.enabled = false; //character controller has own definition of position, so we cant change position unless deactivated
             _thirdPersonController.enabled = false;
             _puppetMaster.Kill();
-
+            EnableControls(false);
             PlayerDeathEvent.Invoke(safe, _thirdPersonController.transform.position);
             //Invoke("Resuscitate", 3f); //Temporary, normally this is done in game manager
         }
@@ -160,14 +158,26 @@ namespace DesirePaths
             _characterController.enabled = true;
             _thirdPersonController.enabled = true;
             _controllerAnimator.SetTrigger("KneelUp"); //RespawnAnim
-            Invoke("GiveControlBack", 1.5f);
+            EnableControls(true);
+        }
+
+        public void EnableControls(bool activate)
+        {
+            Debug.Log("Player health : activate controls = " + activate);
+            if(activate)
+            {
+                Invoke("GiveControlBack", 1.5f);
+            } else
+            {
+                _playerInputs.DeactivateInput();
+                _playerInputs.enabled = false;
+            }
         }
 
         void GiveControlBack()
         {
             _playerInputs.enabled = true;
             _playerInputs.ActivateInput();
-            
         }
 
         /// <summary>
