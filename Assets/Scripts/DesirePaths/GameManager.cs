@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Splines;
 
 namespace DesirePaths
 {
@@ -44,12 +45,15 @@ namespace DesirePaths
         [Header("Gameplay components")]
         [SerializeField] private PlayerSpawner _playerSpawner;
         [SerializeField] private CadaverGutsManager _cadaverManager;
+        [SerializeField] private GutsProximity _gutsProximityDetector;
         [SerializeField] private Landmarks.LandmarkManager _landmarkManager;
         [Header("UX components")]
         [SerializeField] private UI.UIManager _uiManager;
         [SerializeField] private Narration.NarrationManager _narrationManager;
 
         public static GameStateEvent OnGameStateChanged;
+
+        public static GameManager _instance;
 
         public enum GameState
         {
@@ -69,12 +73,20 @@ namespace DesirePaths
 
         private void Awake()
         {
+            CheckSingletonPattern();
             _playerSpawner.SetThirdPersonController = _playerThirdPersonController;
             SubscribeToPlayerDeathEvents(true);
             SubscribeToLandmarkEvents(true);
             BindNarrationCallbacks(true);
             SetState(GameState.Play);
         }
+
+        void CheckSingletonPattern()
+        {
+            if (_instance == null) _instance = this;
+            else Destroy(this);
+        }
+
 
         private void OnDisable()
         {
@@ -201,7 +213,9 @@ namespace DesirePaths
             if (!safe)
             {
                 //Deposite cadaver if not on safe space
-                _cadaverManager.DepositCadaverOnPosition(position);
+                
+                _cadaverManager.DepositCadaverOnPosition(position, _gutsProximityDetector._DroppedPoints);
+                //_gutsProximityDetector.enabled = false; //Stop dropping points
             }
 
             _playerSpawner.OnPlayerRespawnComplete.AddListener(delegate
@@ -210,10 +224,25 @@ namespace DesirePaths
                  //We place only when we're sure camera is not looking, so when resuscitate is call                
                 _playerHealth.Resuscitate();
             });
-            _playerSpawner.RespawnPlayer();            
+            _playerSpawner.RespawnPlayer();
+            
         }
         #endregion
+
+        #region Utility
+
+        public Spline GetLastGuts()
+        {
+            return _cadaverManager.GetLastCreatedSpline();
+        }
+
+
+        #endregion
+
+
     }
+
+
 
 }
 

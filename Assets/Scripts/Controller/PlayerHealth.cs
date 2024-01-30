@@ -103,7 +103,7 @@ namespace DesirePaths
             //Check if in safe space
             if (Physics.Raycast(t_checkLayerTransform.position, -Vector3.up, out _hit, Mathf.Infinity, _safeMask,QueryTriggerInteraction.Collide)) //Also report trigger hits?
             {
-                onSafeSpace = true;
+                onSafeSpace = true; 
                 //Place particle system
                 var particleTransform = _groundHealPS.transform;
                 particleTransform.localPosition = particleTransform.InverseTransformPoint(_hit.point); //To get correct height

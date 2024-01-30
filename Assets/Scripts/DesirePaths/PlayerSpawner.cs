@@ -23,7 +23,7 @@ namespace DesirePaths
         [SerializeField] private float _backTrackDuration = 10f; //No matter how long the guts are, its always the same duration by lerp
         [SerializeField] private Transform _backTrackElement;
         [SerializeField] private CinemachineVirtualCamera _vcam;
-        [SerializeField] private SplineContainer _spline;
+        [SerializeField] private Spline _spline;
 
 
         private float3 _backTrackPosition;
@@ -63,6 +63,7 @@ namespace DesirePaths
             yield return new WaitForSeconds(_respawnDelay/2);
 
             float _currentDuration = 0f;
+            _spline = GameManager._instance.GetLastGuts();
             _spline.Evaluate(1, out _backTrackPosition, out _backTrackTangent, out _backTrackUp); //Reposition for first frame
             _backTrackElement.position = (Vector3)_backTrackPosition;
             _backTrackElement.rotation = Quaternion.LookRotation(-(Vector3)_backTrackTangent, (Vector3)_backTrackUp);
